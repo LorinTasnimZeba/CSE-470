@@ -23,7 +23,7 @@ public class Bank {
             lock.lock();
             while (true) {
                 int amount = operationsQueue.getNextItem();
-                if(amount == -9999) {
+                if(amount == -9999 ) {
                     break;
                 }
                 if (amount>0) {
@@ -50,12 +50,12 @@ public class Bank {
             lock.lock();
             while (true) {
                 int amount = operationsQueue.getNextItem();
-                if(amount == -9999) {
-                    break;
-                }
+                // if(amount == -) {
+                //     break;
+                // }
                 if(balance+amount<0){
                     System.out.println("Not enough balance to deposite "+amount);
-                    continue;
+                    break;
                 }
                 if (amount<0) {
                     balance =  balance + amount;
